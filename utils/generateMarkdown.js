@@ -2,9 +2,9 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
     if (license === "MIT") {
-        return "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
-      } else if(license === "Apache"){
-        return "![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)";
+        return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`;
+      } else if (license === "Apache") {
+        return `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`;
       } else {
         return "";
       }
@@ -13,7 +13,13 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-    
+    if (license === "MIT") {
+        return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+      } else if (license === "Apache") {
+        return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
+      } else {
+        return "";
+      }
 }
 
 // TODO: Create a function that returns the license section of README
@@ -30,7 +36,7 @@ function generateMarkdown(data) {
 }
 
 function content(data) {
-return `## ${data.title}
+return `## ${data.title}         ${renderLicenseBadge(data.license)}
 
 ## Description
 * ${data.motivation}
@@ -55,7 +61,7 @@ ${data.usage}
 ${data.credits}
 
 ## License
-${renderLicenseBadge(data.license)}
+${renderLicenseLink(data.license)}
 
 ## Questions
 You can reach me at   
@@ -83,7 +89,7 @@ ${data.usage}
 ${data.credits} 
 
 ## License
-${renderLicenseBadge(data.license)}
+${renderLicenseLink(data.license)}
 
 ## Questions
 You can reach me at  
