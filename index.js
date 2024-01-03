@@ -46,7 +46,7 @@ const questions = [
     name: "license",
     type: "list",
     message: "License to add",
-    choices: ["Apache", "MIT"],
+    choices: ["Apache", "MIT", "None"],
   },
   {
     name: "github",
@@ -71,7 +71,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 async function init() {
   const ask = await inquirer.prompt(questions);
-  console.log(generateMarkdown(ask));
+  // console.log(generateMarkdown(ask));
   writeToFile("dataStorage.md", generateMarkdown(ask));
 }
 

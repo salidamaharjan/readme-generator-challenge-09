@@ -14,11 +14,11 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license === "MIT") {
-    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+    return `${renderLicenseBadge(license)}
 
 A short, permissive software license. Basically, you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source. There are many variations of this license in use.`;
   } else if (license === "Apache") {
-    return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+    return `${renderLicenseBadge(license)}
 
 You can do what you like with the software, as long as you include the required notices. This permissive license contains a patent license from the contributors of the code.`;
   } else {
@@ -75,17 +75,16 @@ Should you have any question, you can reach me at
 `;
 }
 
-function tableOfContent(data){
-    if (data.content) {
-   return `## Table of Content
+function tableOfContent(data) {
+  if (data.content) {
+    return `## Table of Content
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [Credits](#credits)
 4. [License](#license)
-5. [Questions](#questions)`
-    } else{
-        return "";
-    }
+5. [Questions](#questions)`;
+  }
+  return "";
 }
 
 module.exports = generateMarkdown;
