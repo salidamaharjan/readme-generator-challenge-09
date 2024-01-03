@@ -16,7 +16,7 @@ function renderLicenseLink(license) {
   if (license === "MIT") {
     return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A short, permissive software license. Basically, you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.  There are many variations of this license in use.`;
+A short, permissive software license. Basically, you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source. There are many variations of this license in use.`;
   } else if (license === "Apache") {
     return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
@@ -39,14 +39,10 @@ ${renderLicenseLink(license)}`;
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  if (data.content) {
-    return content(data);
-  } else {
-    return withoutContent(data);
-  }
+  return readme(data);
 }
 
-function content(data) {
+function readme(data) {
   return `## ${data.title}     
 ${renderLicenseBadge(data.license)}
 
@@ -56,12 +52,7 @@ ${renderLicenseBadge(data.license)}
 * ${data.solves}
 * ${data.learning}
 
-## Table of Content
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Credits](#credits)
-4. [License](#license)
-5. [Questions](#questions)
+${tableOfContent(data)}
 
 ## Installation
 ${data.installation}
@@ -84,35 +75,17 @@ Should you have any question, you can reach me at
 `;
 }
 
-function withoutContent(data) {
-  return `## ${data.title} 
-
-## Description
-* ${data.motivation}
-* ${data.purpose}
-* ${data.solves}
-* ${data.learning} 
-
-## Installation
-${data.installation} 
-
-## Usage
-${data.usage}
-
-## Credits
-${data.credits} 
-
-## License
-${renderLicenseSection(data.license)}
-
-## Questions
-
-Should you have any question, you can reach me at 
-
-[GitHub](https://github.com/${data.github})
-
-[Email Me](mailto:${data.email})
-`;
+function tableOfContent(data){
+    if (data.content) {
+   return `## Table of Content
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Credits](#credits)
+4. [License](#license)
+5. [Questions](#questions)`
+    } else{
+        return "";
+    }
 }
 
 module.exports = generateMarkdown;
