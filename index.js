@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -70,74 +71,10 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 async function init() {
   const ask = await inquirer.prompt(questions);
-  if (ask.content) {
-    writeToFile(
-      "readme.md",
-      `## ${ask.title}
-
-## Description
-* ${ask.motivation}
-* ${ask.purpose}
-* ${ask.solves}
-* ${ask.learning}
-
-## Table of Content
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Credits](#credits)
-4. [License](#license)
-5. [Questions](#questions)
-
-## Installation
-${ask.installation}
-
-## Usage
-${ask.usage}
-
-## Credits
-${ask.credits}
-
-## License
-${ask.license}
-
-## Questions
-You can reach me at
-
-${ask.github}
-${ask.email}
-`
-    );
-  } else {
-    writeToFile(
-        "readme.md",
-        `## ${ask.title}
-  
-  ## Description
-  * ${ask.motivation}
-  * ${ask.purpose}
-  * ${ask.solves}
-  * ${ask.learning}
-  
-  ## Installation
-  ${ask.installation}
-  
-  ## Usage
-  ${ask.usage}
-  
-  ## Credits
-  ${ask.credits}
-  
-  ## License
-  ${ask.license}
-  
-  ## Questions
-  You can reach me at
-  
-  ${ask.github}
-  ${ask.email}
-  `);
-  }
+  console.log(generateMarkdown(ask));
+  writeToFile("readmeGenerator.md", generateMarkdown(ask));
 }
 
 // Function call to initialize app
 init();
+
