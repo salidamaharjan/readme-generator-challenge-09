@@ -3,7 +3,7 @@
 ## Description
 * motivation
 * build
-* solve
+* solves
 * learn
 
 ## Table of Content
@@ -14,7 +14,7 @@
 5. [Questions](#questions)
 
 ## Installation
-installation
+insatallation
 
 ## Usage
 usage
@@ -23,10 +23,10 @@ usage
 credit
 
 ## License
-MIT
+Apache
 
 ## Questions
 You can reach me at
 
-salidamaharjan
-salidamaharjan@gmail.com
+sm
+sm@gmail.com

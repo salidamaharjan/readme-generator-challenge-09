@@ -10,7 +10,7 @@ const questions = [
   },
   {
     name: "motivation",
-    message: "What is your motivation for this project?"
+    message: "What is your motivation for this project?",
   },
   {
     name: "purpose",
@@ -59,20 +59,21 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.appendFile(fileName, data, (err) => {
-        if (err) {
-            throw err;
-        }
-        console.log(`Added to ${fileName}`);
-    })
+  fs.appendFile(fileName, data, (err) => {
+    if (err) {
+      throw err;
+    }
+    console.log(`Added to ${fileName}`);
+  });
 }
 
 // TODO: Create a function to initialize app
 async function init() {
-    const ask = await inquirer.prompt(
-        questions
-    );
-    writeToFile("readme.md", `## ${ask.title}
+  const ask = await inquirer.prompt(questions);
+  if (ask.content) {
+    writeToFile(
+      "readme.md",
+      `## ${ask.title}
 
 ## Description
 * ${ask.motivation}
@@ -104,7 +105,38 @@ You can reach me at
 
 ${ask.github}
 ${ask.email}
-`);
+`
+    );
+  } else {
+    writeToFile(
+        "readme.md",
+        `## ${ask.title}
+  
+  ## Description
+  * ${ask.motivation}
+  * ${ask.purpose}
+  * ${ask.solves}
+  * ${ask.learning}
+  
+  ## Installation
+  ${ask.installation}
+  
+  ## Usage
+  ${ask.usage}
+  
+  ## Credits
+  ${ask.credits}
+  
+  ## License
+  ${ask.license}
+  
+  ## Questions
+  You can reach me at
+  
+  ${ask.github}
+  ${ask.email}
+  `);
+  }
 }
 
 // Function call to initialize app
