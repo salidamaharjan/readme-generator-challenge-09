@@ -2,9 +2,9 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
     if (license === "MIT") {
-        return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`;
+        return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
       } else if (license === "Apache") {
-        return `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`;
+        return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
       } else {
         return "";
       }
@@ -14,9 +14,13 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
     if (license === "MIT") {
-        return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+        return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A short, permissive software license. Basically, you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.  There are many variations of this license in use.`;
       } else if (license === "Apache") {
-        return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
+        return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+        
+You can do what you like with the software, as long as you include the required notices. This permissive license contains a patent license from the contributors of the code.`;
       } else {
         return "";
       }
@@ -24,7 +28,14 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+    if(license) {
+        return `## License
+${renderLicenseLink(license)}`;
+    } else {
+        return "";
+    }  
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -36,7 +47,8 @@ function generateMarkdown(data) {
 }
 
 function content(data) {
-return `## ${data.title}         ${renderLicenseBadge(data.license)}
+return `## ${data.title}     
+${renderLicenseBadge(data.license)}
 
 ## Description
 * ${data.motivation}
@@ -60,8 +72,7 @@ ${data.usage}
 ## Credits
 ${data.credits}
 
-## License
-${renderLicenseLink(data.license)}
+${renderLicenseSection(data.license)}
 
 ## Questions
 You can reach me at   
@@ -89,7 +100,7 @@ ${data.usage}
 ${data.credits} 
 
 ## License
-${renderLicenseLink(data.license)}
+${renderLicenseSection(data.license)}
 
 ## Questions
 You can reach me at  
