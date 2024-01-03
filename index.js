@@ -41,6 +41,7 @@ async function init() {
     const ask = await inquirer.prompt(
         questions
     );
+    writeToFile("readme.md", `## ${ask.title}` )
 }
 
 // Function call to initialize app
