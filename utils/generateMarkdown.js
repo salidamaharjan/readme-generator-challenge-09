@@ -1,40 +1,40 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-    if (license === "MIT") {
-        return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-      } else if (license === "Apache") {
-        return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
-      } else {
-        return "";
-      }
+  if (license === "MIT") {
+    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+  } else if (license === "Apache") {
+    return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
+  } else {
+    return "";
+  }
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-    if (license === "MIT") {
-        return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  if (license === "MIT") {
+    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A short, permissive software license. Basically, you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.  There are many variations of this license in use.`;
-      } else if (license === "Apache") {
-        return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-        
+  } else if (license === "Apache") {
+    return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 You can do what you like with the software, as long as you include the required notices. This permissive license contains a patent license from the contributors of the code.`;
-      } else {
-        return "";
-      }
+  } else {
+    return "";
+  }
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-    if(license) {
-        return `## License
+  if (license) {
+    return `## License
 ${renderLicenseLink(license)}`;
-    } else {
-        return "";
-    }  
+  } else {
+    return "";
+  }
 }
 
 // TODO: Create a function to generate markdown for README
@@ -47,7 +47,7 @@ function generateMarkdown(data) {
 }
 
 function content(data) {
-return `## ${data.title}     
+  return `## ${data.title}     
 ${renderLicenseBadge(data.license)}
 
 ## Description
@@ -75,14 +75,17 @@ ${data.credits}
 ${renderLicenseSection(data.license)}
 
 ## Questions
-You can reach me at   
-${data.github}
-${data.email}
+
+Should you have any question, you can reach me at 
+
+[GitHub](https://github.com/${data.github})
+
+[Email Me](mailto:${data.email})
 `;
 }
 
 function withoutContent(data) {
-return `## ${data.title} 
+  return `## ${data.title} 
 
 ## Description
 * ${data.motivation}
@@ -103,9 +106,12 @@ ${data.credits}
 ${renderLicenseSection(data.license)}
 
 ## Questions
-You can reach me at  
-${data.github}
-${data.email}
+
+Should you have any question, you can reach me at 
+
+[GitHub](https://github.com/${data.github})
+
+[Email Me](mailto:${data.email})
 `;
 }
 
