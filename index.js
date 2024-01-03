@@ -80,6 +80,30 @@ async function init() {
 * ${ask.solves}
 * ${ask.learning}
 
+## Table of Content
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Credits](#credits)
+4. [License](#license)
+5. [Questions](#questions)
+
+## Installation
+${ask.installation}
+
+## Usage
+${ask.usage}
+
+## Credits
+${ask.credits}
+
+## License
+${ask.license}
+
+## Questions
+You can reach me at
+
+${ask.github}
+${ask.email}
 `);
 }
 
