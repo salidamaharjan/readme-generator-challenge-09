@@ -2,13 +2,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-* This project is built to generate a good readme app.
-* User will get the series of question, based on their answer a readme is generated. 
-* User can easily build a readme document with the help of this app.
-* With the completion of this project, I was able to learn about the node and npm.
+* This project is built to help the user generate a README document.
+* User can create README file for their project.
+* Series of question is asked, and based on the answer a README file is created.
+* With the completion of this project, I learned about node and npm.
 
-## How to run the project 
-
+## How to run the project
+* Click on the following link to watch how to run video:
 
 ## Table of Content
 1. [Installation](#installation)
@@ -19,16 +19,16 @@
 6. [Questions](#questions)
 
 ## Installation
-Ensure that the node version 18 is installed and on this project folder run npm using `npm install` command.
+Clone the project. Ensure node version 18 is installed. Use `npm install` to install the project dependencies.
 
 ## Run
-Use `node index` command to run the project.
+To run the project use `node index.js`.
 
 ## Usage
-The user will be able to build a readme document.
+User can generate a README document answering the series of questions.
 
 ## Credits
-Bootcamp course, class discussion and practice, [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Node), [tl;drLegal](https://www.tldrlegal.com/)
+BootCamp course, class discussion and practice, [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Node), [tl;drLegal](https://www.tldrlegal.com/)
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
