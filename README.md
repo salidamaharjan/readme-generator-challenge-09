@@ -7,6 +7,9 @@
 * User can easily build a readme document with the help of this app.
 * With the completion of this project, I was able to learn about the node and npm.
 
+## How to run the project 
+
+
 ## Table of Content
 1. [Installation](#installation)
 2. [Run](#run)
