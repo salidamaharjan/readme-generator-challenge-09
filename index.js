@@ -35,6 +35,10 @@ const questions = [
     message: "Installation Guide for your app",
   },
   {
+    name: "run",
+    message: "How to run your project",
+  },
+  {
     name: "usage",
     message: "Usage for your app",
   },
@@ -60,7 +64,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  fs.appendFile(fileName, data, (err) => {
+  fs.writeFile(fileName, data, (err) => {
     if (err) {
       throw err;
     }
@@ -72,7 +76,7 @@ function writeToFile(fileName, data) {
 async function init() {
   const ask = await inquirer.prompt(questions);
   // console.log(generateMarkdown(ask));
-  writeToFile("dataStorage.md", generateMarkdown(ask));
+  writeToFile("README.md", generateMarkdown(ask));
 }
 
 // Function call to initialize app

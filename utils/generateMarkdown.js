@@ -57,6 +57,9 @@ ${tableOfContent(data)}
 ## Installation
 ${data.installation}
 
+## Run
+${data.run}
+
 ## Usage
 ${data.usage}
 
@@ -79,10 +82,11 @@ function tableOfContent(data) {
   if (data.content) {
     return `## Table of Content
 1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Credits](#credits)
-4. [License](#license)
-5. [Questions](#questions)`;
+2. [Run](#run)
+3. [Usage](#usage)
+4. [Credits](#credits)
+5. [License](#license)
+6. [Questions](#questions)`;
   }
   return "";
 }
