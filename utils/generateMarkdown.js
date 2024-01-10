@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Function created that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license === "MIT") {
@@ -10,7 +10,7 @@ function renderLicenseBadge(license) {
   }
 }
 
-// TODO: Create a function that returns the license link
+// Function created that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license === "MIT") {
@@ -26,7 +26,7 @@ You can do what you like with the software, as long as you include the required 
   }
 }
 
-// TODO: Create a function that returns the license section of README
+// Function created that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license) {
@@ -37,11 +37,12 @@ ${renderLicenseLink(license)}`;
   }
 }
 
-// TODO: Create a function to generate markdown for README
+// Function created to generate markdown for README
 function generateMarkdown(data) {
   return readme(data);
 }
 
+// The user answers are formatted using markdown syntax
 function readme(data) {
   return `## ${data.title}     
 ${renderLicenseBadge(data.license)}
@@ -78,6 +79,7 @@ Should you have any question, you can reach me at
 `;
 }
 
+//creating a function to return table of content oor and empty string
 function tableOfContent(data) {
   if (data.content) {
     return `## Table of Content
@@ -91,4 +93,5 @@ function tableOfContent(data) {
   return "";
 }
 
+//export is necessary to be able to import and access this file
 module.exports = generateMarkdown;
