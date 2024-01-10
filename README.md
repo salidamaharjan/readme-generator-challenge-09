@@ -4,11 +4,15 @@
 ## Description
 * This project is built to help the user generate a README document.
 * User can create README file for their project.
-* Series of question is asked, and based on the answer a README file is created.
+* Series of question is asked as follow:
+![Questions](./assets/images/question.png)
+* Based on the answer, a README file is created.
 * With the completion of this project, I learned about node and npm.
 
 ## How to run the project
 * Click on the following link to watch how to run video:
+
+    **[How to run video](https://www.youtube.com/watch?v=RPhokD025xo)**
 
 ## Table of Content
 1. [Installation](#installation)
