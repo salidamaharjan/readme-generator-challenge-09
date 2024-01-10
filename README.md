@@ -6,15 +6,12 @@
 * User can create README file for their project.
 * Series of question is asked as follow:
 ![Questions](./assets/images/question.png)
-* Based on the answer, a README file is created as follow:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1vm7NUY_LIA?si=uQJ3gKCWpN4VukG_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+* Based on the answer, a README file is created.
 * With the completion of this project, I learned about node and npm.
 
 ## How to run the project
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RPhokD025xo?si=13Y8CE9j7p1Qo6Sm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+* Click on the following link to watch how to run video:
+[![How to run video](./assets/images/How%20to%20video.png)](https://www.youtube.com/watch?v=RPhokD025xo)
 
 ## Table of Content
 1. [Installation](#installation)
